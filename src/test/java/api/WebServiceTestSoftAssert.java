@@ -15,7 +15,7 @@ import static org.apache.http.entity.ContentType.getOrDefault;
 public class WebServiceTestSoftAssert {
 
 
-    @Test
+    @Test(description = "this test will fail on purpose to show a hard assert failure")
     public void hardAssertStopsImmediately() throws IOException {
         // Arrange
         CloseableHttpClient client = HttpClientBuilder.create().build();
@@ -38,7 +38,7 @@ public class WebServiceTestSoftAssert {
         response.close();
     }
 
-    @Test
+    @Test(description = "this test will fail on purpose to show a soft assert failure")
     public void softAssertContinuesToTheEnd() throws IOException {
         // Arrange
         CloseableHttpClient client = HttpClientBuilder.create().build();
